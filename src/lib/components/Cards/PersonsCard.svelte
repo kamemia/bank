@@ -26,8 +26,7 @@
   
   <Card padding="xl" size="md">
     <div class="flex justify-between items-center mb-4">
-      <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Customers</h5>
-      <a href="/" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> View all </a>
+      <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Persons</h5>
     </div>
     <Listgroup items={list} let:item class="border-0 dark:!bg-transparent">
       <div class="flex items-center space-x-4 rtl:space-x-reverse">
@@ -37,11 +36,8 @@
             {item.name}
           </p>
           <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-            {item.email}
+            {item.value}
           </p>
-        </div>
-        <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-          {item.value}
         </div>
       </div>
     </Listgroup>

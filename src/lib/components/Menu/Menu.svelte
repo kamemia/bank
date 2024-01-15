@@ -13,7 +13,7 @@
   
     .menu {
       position: fixed;
-      background: black;
+      background: white;
       left: 0;
       top: 0;
       bottom: 0;
@@ -27,7 +27,7 @@
     }
   
     .menu.active .menu__Link {
-      color: white;
+      color: black;
     }
   
     .menu__List {
@@ -73,10 +73,10 @@
     .menu__Toggle {
       all: unset;
       font-size: 14px;
-      color: red;
+      color: black;
       padding: 15px;
       font-weight: bold;
-      background: #333;
+      background: #fff;
       margin: 20px;
       cursor: pointer;
     }
@@ -94,12 +94,12 @@
   
   <main>
     <nav class="menu" class:active="{ navActive }">
-      <button class="menu__Toggle" on:click="{ () => toggleNav() }">{ navActive ? '<' : '>'}</button>
+      <button class="menu__Toggle" on:click="{ () => toggleNav() }">{ navActive ? 'X' : '>'}</button>
       <ul class="menu__List">
-        <li class="menu__Item"><a title="🐤" class="menu__Link active" href="/">Transactions</a></li>
-        <li class="menu__Item"><a title="🐶" class="menu__Link" href="">Customers</a></li>
-        <li class="menu__Item"><a title="🙈" class="menu__Link" href="">Link 3</a></li>
-        <li class="menu__Item"><a title="🐻" class="menu__Link" href="">Link 4</a></li>
+        <li class="menu__Item"><a title="🐤" class="menu__Link active" href="/transactions">Transactions</a></li>
+        <li class="menu__Item"><a title="🐶" class="menu__Link" href="/customers">Customers</a></li>
+        <li class="menu__Item"><a title="🙈" class="menu__Link" href="/payhistory.svelte">Payment History</a></li>
+        <li class="menu__Item"><a title="🐻" class="menu__Link" href="/widgets">Widgets</a></li>
       </ul>
     </nav>
       <div class="wrapper" class:active="{ navActive }"></div>

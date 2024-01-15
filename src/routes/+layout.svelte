@@ -11,6 +11,3 @@
     </main>
 </div>
 
-<div class="">
-    <PersonsCard />
-</div>
