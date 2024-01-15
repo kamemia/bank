@@ -98,7 +98,7 @@
       <ul class="menu__List">
         <li class="menu__Item"><a title="🐤" class="menu__Link active" href="/transactions">Transactions</a></li>
         <li class="menu__Item"><a title="🐶" class="menu__Link" href="/customers">Customers</a></li>
-        <li class="menu__Item"><a title="🙈" class="menu__Link" href="/payhistory.svelte">Payment History</a></li>
+        <li class="menu__Item"><a title="🙈" class="menu__Link" href="/payhistoryview">Payment History</a></li>
         <li class="menu__Item"><a title="🐻" class="menu__Link" href="/widgets">Widgets</a></li>
       </ul>
     </nav>
