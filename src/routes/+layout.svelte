@@ -10,11 +10,4 @@
     </main>
 </div>
 
-<div class="grid grid-rows-3 grid-flow-col gap-4">
-  <Menu />
-  <div class="absolute top-0 right-0 mt-4 mr-2">
-    <PersonsCard />
-  </div>
-
-</div>
 

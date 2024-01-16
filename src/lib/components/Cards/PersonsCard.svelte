@@ -4,19 +4,19 @@
     import { Card, Listgroup, Avatar } from 'flowbite-svelte';
     let list = [
       {
-        img: { src: '/images/profile-picture-1.webp', alt: 'Neil Sims' },
+        img: { src: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fnordic.ign.com%2Favatar-generations&psig=AOvVaw2EpkuMC43P_Nj4G-IRe4rC&ust=1705411778196000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCIjatpbA34MDFQAAAAAdAAAAABAD', alt: 'Neil Sims' },
         name: 'Neil Sims',
         email: 'email@windster.com',
         value: '$320'
       },
       {
-        img: { src: '/images/profile-picture-2.webp', alt: 'Bonnie Green' },
+        img: { src: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fnordic.ign.com%2Favatar-generations&psig=AOvVaw2EpkuMC43P_Nj4G-IRe4rC&ust=1705411778196000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCIjatpbA34MDFQAAAAAdAAAAABAD', alt: 'Bonnie Green' },
         name: 'Bonnie Green',
         email: 'email@windster.com',
         value: '$3467'
       },
       {
-        img: { src: '/images/profile-picture-3.webp', alt: 'Michael Gough' },
+        img: { src: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fnordic.ign.com%2Favatar-generations&psig=AOvVaw2EpkuMC43P_Nj4G-IRe4rC&ust=1705411778196000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCIjatpbA34MDFQAAAAAdAAAAABAD', alt: 'Michael Gough' },
         name: 'Michael Gough',
         email: 'email@windster.com',
         value: '$67'

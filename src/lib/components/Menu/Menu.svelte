@@ -1,10 +1,41 @@
 <script>
-  
-    let navActive = false;
-    const toggleNav = () => {
-      navActive = !navActive;
-    };
-  </script>
+  import { onMount } from 'svelte';
+  import { goto } from '$app/navigation';
+  import { CalendarWeekSolid } from 'flowbite-svelte-icons';
+
+  let navActive = false;
+
+  const toggleNav = () => {
+    navActive = !navActive;
+  };
+
+  // A function to navigate to a different page and update the active class
+  const navigateTo = (path) => {
+    goto(path);
+    updateActiveClass();
+  };
+
+  // Function to update the active class based on the current route
+  const updateActiveClass = () => {
+    const currentPath = window.location.pathname;
+    const links = document.querySelectorAll('.menu__Link');
+
+    links.forEach((link) => {
+      const linkPath = link.getAttribute('href');
+
+      if (currentPath === linkPath) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  };
+
+  // Run the updateActiveClass function on component mount
+  onMount(() => {
+    updateActiveClass();
+  });
+</script>
   
   <style>
     main {
@@ -96,7 +127,7 @@
     <nav class="menu" class:active="{ navActive }">
       <button class="menu__Toggle" on:click="{ () => toggleNav() }">{ navActive ? 'X' : '>'}</button>
       <ul class="menu__List">
-        <li class="menu__Item"><a title="🐤" class="menu__Link active" href="/transactions">Transactions</a></li>
+        <li class="menu__Item"><a title="<CalenderWeekSolid/>" class="menu__Link active" href="/transactions">Transactions</a></li>
         <li class="menu__Item"><a title="🐶" class="menu__Link" href="/customers">Customers</a></li>
         <li class="menu__Item"><a title="🙈" class="menu__Link" href="/payhistoryview">Payment History</a></li>
         <li class="menu__Item"><a title="🐻" class="menu__Link" href="/widgets">Widgets</a></li>

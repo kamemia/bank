@@ -1,7 +1,9 @@
 <script>
     import TransactionsCard from "$lib/components/Cards/TransactionsCard.svelte";
     import { InlineCalendar } from 'svelte-calendar';
-    
+    import PersonsCard from "$lib/components/Cards/PersonsCard.svelte";
+    import Menu from '$lib/components/Menu/Menu.svelte'
+
     const theme = {
 		calendar: {
 			width: '300px',
@@ -18,9 +20,23 @@
     
 </script>
 
-<div class="flex items-center">
-    <div class="pt-24 pb-12"><TransactionsCard /></div>
-</div>
-<div class="mb-4 mr-2 absolute bottom-0 right-0">
-<InlineCalendar {theme}/>
+<div class="flex">
+    <Menu />
+    <!-- Left-aligned TransactionsCard -->
+    <div class="pt-24 pb-12 pr-4">
+        <TransactionsCard />
+    </div>
+
+    <!-- Container for PersonsCard and Calendar -->
+    <div class="flex flex-col items-end">
+        <!-- Right-aligned PersonsCard -->
+        <div class="pt-24 pr-4">
+            <PersonsCard />
+        </div>
+
+        <!-- Calendar positioned under PersonsCard -->
+        <div class="mb-4 mr-2">
+            <InlineCalendar {theme} />
+        </div>
+    </div>
 </div>
