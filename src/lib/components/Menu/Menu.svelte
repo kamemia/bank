@@ -10,7 +10,7 @@
   };
 
   // A function to navigate to a different page and update the active class
-  const navigateTo = (path) => {
+  const navigateTo = (/** @type {string | URL} */ path) => {
     goto(path);
     updateActiveClass();
   };
