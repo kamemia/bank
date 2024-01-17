@@ -1,7 +1,12 @@
 <script>
-    export let items = [];
+    // @ts-ignore
+    /**
+	 * @type {any[]}
+	 */
+     export let items = [];
     export let activeTabValue = 1;
   
+    // @ts-ignore
     const handleClick = tabValue => () => (activeTabValue = tabValue);
   </script>
   

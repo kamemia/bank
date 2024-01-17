@@ -1,7 +1,6 @@
 <script>
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
-  import { CalendarWeekSolid } from 'flowbite-svelte-icons';
 
   let navActive = false;
 
@@ -127,7 +126,7 @@
     <nav class="menu" class:active="{ navActive }">
       <button class="menu__Toggle" on:click="{ () => toggleNav() }">{ navActive ? 'X' : '>'}</button>
       <ul class="menu__List">
-        <li class="menu__Item"><a title="<CalenderWeekSolid/>" class="menu__Link active" href="/transactions">Transactions</a></li>
+        <li class="menu__Item"><a title="🐶" class="menu__Link active" href="/transactions">Transactions</a></li>
         <li class="menu__Item"><a title="🐶" class="menu__Link" href="/customers">Customers</a></li>
         <li class="menu__Item"><a title="🙈" class="menu__Link" href="/payhistoryview">Payment History</a></li>
         <li class="menu__Item"><a title="🐻" class="menu__Link" href="/widgets">Widgets</a></li>
