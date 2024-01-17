@@ -20,23 +20,23 @@
     
 </script>
 
-<div class="flex">
+<div class="grid grid-flow-col grid-rows-3 gap-4">
     <Menu />
     <!-- Left-aligned TransactionsCard -->
-    <div class="pt-24 pb-12 pr-4">
+    <div class="row-span-3">
         <TransactionsCard />
     </div>
 
     <!-- Container for PersonsCard and Calendar -->
-    <div class="flex flex-col items-end">
+    
         <!-- Right-aligned PersonsCard -->
-        <div class="pt-24 pr-4">
+        <div class="col-span-2">
             <PersonsCard />
         </div>
 
         <!-- Calendar positioned under PersonsCard -->
-        <div class="mb-4 mr-2">
+        <div class="col-span-2 row-span-2">
             <InlineCalendar {theme} />
         </div>
-    </div>
+    
 </div>
