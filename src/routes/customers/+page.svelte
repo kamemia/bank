@@ -5,6 +5,7 @@
     import Tab2 from '$lib/components/Tabs/Tab1.svelte';
     import Tab3 from '$lib/components/Tabs/Tab2.svelte';
     import Tabs from '$lib/components/Tabs/Tabs.svelte';
+    import PersonsCard from '$lib/components/Cards/PersonsCard.svelte';
 
     let items = [
         {
@@ -27,6 +28,9 @@
 
 <Menu/>
 
-<div>
-    <Tabs {items}/>
+<div class="grid grid-cols-5 grid-rows-5 gap-4">
+    <div class="col-span-4 row-span-5">
+        <Tabs {items}/>
+    </div>
+    <div class="row-span-5 col-start-5"><PersonsCard/></div>
 </div>

@@ -1,5 +1,6 @@
 <script>
     import { LayerCake, Svg, Html } from 'layercake';
+    import Bar from '../Charts/Bar.svelte';
 </script>
 
 <div>
@@ -12,6 +13,7 @@
         </div>
         <div class="col-span-2 row-span-2">
             <h1>Origin of clients</h1>
+            <!-- <Bar/> -->
         </div>
 
     </div>

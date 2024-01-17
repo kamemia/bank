@@ -107,7 +107,7 @@
       padding: 15px;
       font-weight: bold;
       background: #fff;
-      margin: 20px;
+      margin: 10px;
       cursor: pointer;
     }
   
@@ -123,7 +123,7 @@
   </style>
   
   <main>
-    <nav class="menu" class:active="{ navActive }">
+    <nav class="menu" class:active="{ navActive }" >
       <button class="menu__Toggle" on:click="{ () => toggleNav() }">{ navActive ? 'X' : '>'}</button>
       <ul class="menu__List">
         <li class="menu__Item"><a title="🐶" class="menu__Link active" href="/transactions">Transactions</a></li>

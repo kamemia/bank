@@ -1,8 +1,15 @@
-<script>
-    import TransactionsCard from "$lib/components/Cards/TransactionsCard.svelte";
+<script lang="ts">
+    import TransactionsTable from '$lib/components/Cards/TransactionsTable.svelte';
     import { InlineCalendar } from 'svelte-calendar';
     import PersonsCard from "$lib/components/Cards/PersonsCard.svelte";
     import Menu from '$lib/components/Menu/Menu.svelte'
+    // import FullCalendar, { type CalendarOptions } from 'svelte-fullcalendar';
+    // import daygridPlugin from '@fullcalendar/daygrid';
+
+    // let options: CalendarOptions = {
+    //     initialView: 'dayGridMonth',
+    //     plugins: [daygridPlugin]
+    // };
 
     const theme = {
 		calendar: {
@@ -20,23 +27,13 @@
     
 </script>
 
-<div class="grid grid-flow-col grid-rows-3 gap-4">
-    <Menu />
-    <!-- Left-aligned TransactionsCard -->
-    <div class="row-span-3">
-        <TransactionsCard />
-    </div>
 
-    <!-- Container for PersonsCard and Calendar -->
+<Menu/>
+<div class="grid grid-cols-5 grid-rows-5 gap-4">
     
-        <!-- Right-aligned PersonsCard -->
-        <div class="col-span-2">
-            <PersonsCard />
-        </div>
-
-        <!-- Calendar positioned under PersonsCard -->
-        <div class="col-span-2 row-span-2">
-            <InlineCalendar {theme} />
-        </div>
+    <div class="col-span-4 row-span-5"><TransactionsTable/></div>
+    <div class="row-span-4 col-start-5"><PersonsCard/></div>
     
+    <div class="col-start-5 row-start-5"><InlineCalendar {theme}/></div>
 </div>
+    
