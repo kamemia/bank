@@ -3,12 +3,11 @@
   import PayPal from '/src/data/images/PayPal.svg';
   import MasterCard from '/src/data/images/MasterCard.svg';
   import Visa from '/src/data/images/Visa.svg';
-  import beer from 'svelte-awesome/icons/beer';
-  import Icon from 'svelte-awesome/components/Icon.svelte';
+  import Warning from '/src/data/images/Warning.svg';
+  import Tick from '/src/data/images/Tick.svg';
+
   import { ClockSolid } from 'flowbite-svelte-icons';
   import { writable } from 'svelte/store';
-	import image from 'svelte-awesome/icons/image';
-	import { TabItem } from 'flowbite-svelte';
   
 
   let jsonData = [];
@@ -143,6 +142,12 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+tbody > tr:hover {
+  background-color: #888;
+}
+.success{
+  height: 20px;
+}
 </style>
 
 <div class="container">
@@ -173,9 +178,9 @@
             <td>{item.id}</td>
             <td>
               {#if item.status === 'success'}
-                <Icon data="{beer}" alt='success'/>
+              <img src={Tick} class="success" alt="success"/>
               {:else if item.status === 'failed'}
-                <Icon data="{beer}" />
+                <img src={Warning}  class="success" alt="warning"/>
               {:else if item.status === 'waiting'}
                 <ClockSolid class=" text-orange-500 me-4"/>
               {/if}
@@ -199,12 +204,12 @@
           </tr>
         {/each}
         <tfoot>
-          <tr class="footer-row">
+          <!-- <tr class="footer-row"> -->
             <td colspan="7"></td>
             <td>Total</td>
             <td>${calculateTotal()}</td>
             <td></td>
-          </tr>
+          <!-- </tr> -->
         </tfoot>
       {:else}
         <tr>

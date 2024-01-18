@@ -18,6 +18,7 @@
 		"@fontsource/merriweather": "^5.0.8",
 		"@fullcalendar/core": "^6.1.10",
 		"@fullcalendar/daygrid": "^6.1.10",
+		"@iconify/svelte": "^3.1.6",
 		"@playwright/test": "^1.28.1",
 		"@popperjs/core": "^2.11.8",
 		"@sveltejs/adapter-auto": "^3.0.0",

@@ -1,6 +1,6 @@
 <script>
-    import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover } from 'flowbite-svelte';
-    import { InfoCircleSolid, ChevronDownSolid, ChevronRightSolid, PenSolid, DownloadSolid, ShareNodesSolid, TrashBinSolid, DotsHorizontalOutline } from 'flowbite-svelte-icons';
+    import { Chart } from 'flowbite-svelte';
+
   
     const options = {
       series: [52.8, 26.8, 20.4],
@@ -62,7 +62,7 @@
 
    
   
-    <Chart {options} class="py-6" />
+<Chart {options} class="py-6" />
   
     
 

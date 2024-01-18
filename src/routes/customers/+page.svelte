@@ -5,7 +5,7 @@
     import Tab2 from '$lib/components/Tabs/Tab1.svelte';
     import Tab3 from '$lib/components/Tabs/Tab2.svelte';
     import Tabs from '$lib/components/Tabs/Tabs.svelte';
-    import PersonsCard from '$lib/components/Cards/PersonsCard.svelte';
+    import PersonsCard from '$lib/components/Cards/decrypted-use-PersonsCard.svelte';
 
     let items = [
         {

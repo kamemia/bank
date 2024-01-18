@@ -1,6 +1,5 @@
 <script>
     import {  Label, Input, Textarea, MultiSelect } from 'flowbite-svelte';
-    import { InfoCircleSolid, UserPlusSolid, CalendarEditSolid } from 'flowbite-svelte-icons';
     let selected = [];
     let attributes = [
       {value:'new', name:'New'},
@@ -13,7 +12,14 @@
     
 </script>
 
-<form action="#" class="mb-6">
+<style>
+  .container{
+    height: 75vh;
+  }
+</style>
+
+<div class="container">
+  <form action="#" class="mb-6">
     <div class="grid grid-cols-3 gap-4">
       <div>
         <Label for="title" class="block mb-2">First name</Label>
@@ -77,3 +83,4 @@
         <Textarea id="message" placeholder="Write event description..." rows="4" name="message" />
       </div>
   </form>
+</div>

@@ -1,7 +1,7 @@
 <script>
-    import Table from "../Table/Table.svelte";
+    import PaymentHistoryTable from '../Table/PaymentHistoryTable.svelte';
 </script>
 
 <main>
-    <Table />
+    <PaymentHistoryTable />
 </main>

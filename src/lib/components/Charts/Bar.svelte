@@ -1,6 +1,6 @@
 <script>
-    import { Chart, Card, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-    import { ArrowUpSolid, ChevronDownSolid, ChevronRightSolid } from 'flowbite-svelte-icons';
+    import { Chart } from 'flowbite-svelte';
+ 
   
     const options = {
       series: [

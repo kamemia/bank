@@ -9,6 +9,5 @@
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="#" active={true} class="text-lg">Webix</NavLi>
-    <NavLi><DarkMode btnClass={darkmodebtn} /></NavLi>
   </NavUl>
 </Navbar>

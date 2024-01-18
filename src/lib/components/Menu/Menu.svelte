@@ -1,8 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
-  import { CalendarEditOutline, CloseOutline, HomeSolid } from 'flowbite-svelte-icons';
-	import { MegaMenu } from 'flowbite-svelte';
+  import { CloseOutline, HomeSolid } from 'flowbite-svelte-icons';
 
   let navActive = false;
 
@@ -136,10 +135,10 @@
       </button>
       <!-- <button class="menu__Toggle" on:click="{ () => toggleNav() }">{ navActive ? 'X' : '>'}</button> -->
       <ul class="menu__List">
-        <li class="menu__Item"><a title="🐶"  class="menu__Link active" href="/transactions">Transactions</a></li>
-        <li class="menu__Item"><a title="🐶" class="menu__Link" href="/customers">Customers</a></li>
-        <li class="menu__Item"><a title="🙈" class="menu__Link" href="/payhistoryview">Payment History</a></li>
-        <li class="menu__Item"><a title="🐻" class="menu__Link" href="/widgets">Widgets</a></li>
+        <li class="menu__Item"><a title="🛒"  class="menu__Link active" href="/transactions">Transactions</a></li>
+        <li class="menu__Item"><a title="👤" class="menu__Link" href="/customers">Customers</a></li>
+        <li class="menu__Item"><a title="📈" class="menu__Link" href="/payhistoryview">Payment History</a></li>
+        <li class="menu__Item"><a title="💾" class="menu__Link" href="/widgets">Widgets</a></li>
       </ul>
     </nav>
       <div class="wrapper" class:active="{ navActive }"></div>
