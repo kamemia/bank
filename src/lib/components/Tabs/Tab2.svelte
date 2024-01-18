@@ -1,20 +1,15 @@
 <script>
-    import { LayerCake, Svg, Html } from 'layercake';
-    import Bar from '../Charts/Bar.svelte';
+    import Pie from '$lib/components/Charts/Pie.svelte';
+    import Bar from '$lib/components/Charts/Bar.svelte';
 </script>
 
-<div>
-    <div class="grid grid-rows-3 grid-flow-col gap 4">
-        <div class="row-span-3">
-            <h1>Origin of clients</h1>
-        </div>
-        <div class="col-span-2">
-            <h1>Clientts by occupation</h1>
-        </div>
-        <div class="col-span-2 row-span-2">
-            <h1>Origin of clients</h1>
-            <!-- <Bar/> -->
-        </div>
 
-    </div>
+
+<div class="grid grid-cols-5 grid-rows-4 gap-4">
+    <div class="col-span-3 row-span-2">1</div>
+    <div class="col-span-2 col-start-4"><Pie/></div>
+    <div class="col-span-2 col-start-4 row-start-2"><Bar/></div>
+    <div class="col-span-2 row-span-2 row-start-3"><Bar/></div>
+    <div class="col-span-3 row-span-2 col-start-3 row-start-3"><Bar/></div>
 </div>
+    

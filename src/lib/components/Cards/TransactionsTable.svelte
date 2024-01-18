@@ -7,6 +7,8 @@
   import Icon from 'svelte-awesome/components/Icon.svelte';
   import { ClockSolid } from 'flowbite-svelte-icons';
   import { writable } from 'svelte/store';
+	import image from 'svelte-awesome/icons/image';
+	import { TabItem } from 'flowbite-svelte';
   
 
   let jsonData = [];
@@ -85,10 +87,10 @@
     border-radius: 5px;
   }
 
-  tfoot {
-    /* position: sticky; */
+  .footer-row {
+    background-color: #f2f2f2; /* Grey background color */
+    position: sticky;
     bottom: 0;
-    background-color: #f2f2f2;
   }
   .buttons {
     text-align: right;
@@ -123,6 +125,24 @@
     background-color: #1f6694;
   }
 
+  ::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 </style>
 
 <div class="container">
@@ -143,6 +163,7 @@
         <th>Name</th>
         <th>Type</th>
         <th>Sum</th>
+        <th>Left</th>
       </tr>
     </thead>
     <tbody class:scrollable-table={filteredData.length > 20}>
@@ -173,12 +194,17 @@
             <td>{item.number}</td>
             <td>{item.name}</td>
             <td>{item.type}</td>
-            <td>{item.sum}</td>
+            <td>${item.sum}</td>
+            <td>${item.left}</td>
           </tr>
         {/each}
         <tfoot>
-          <td colspan="7">Totals</td>
-          <td>{calculateTotal()}</td>
+          <tr class="footer-row">
+            <td colspan="7"></td>
+            <td>Total</td>
+            <td>${calculateTotal()}</td>
+            <td></td>
+          </tr>
         </tfoot>
       {:else}
         <tr>

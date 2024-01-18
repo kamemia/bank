@@ -26,7 +26,7 @@
     
     <div class="col-span-4 row-span-5"><TransactionsTable/></div>
     <div class="row-span-4 col-start-5"><PersonsCard/></div>
-    
     <div class="col-start-5 row-start-5"><InlineCalendar {theme}/></div>
+    <!-- <div class="col-start-5 row-start-5"></div> -->
 </div>
     
