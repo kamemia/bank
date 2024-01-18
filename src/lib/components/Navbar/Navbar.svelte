@@ -1,18 +1,14 @@
 <script>
-    import { Navbar, NavUl, NavLi, NavBrand, NavHamburger} from 'flowbite-svelte';
+    import { DarkMode, Navbar, NavUl, NavLi, NavBrand, NavHamburger} from 'flowbite-svelte';
+    let darkmodebtn =
+    'text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4  z-50';
+    let navClass = 'bg-ricecake border-gray-200 p-2 border-b rounded  dark:bg-blackpearl';
 </script>
 
-<Navbar  >
-    <NavBrand href="/transactions">
-      <!-- <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" /> -->
-      <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Webix</span>
-    </NavBrand>
-    <NavHamburger  />
-    <NavUl >
-      <NavLi href="/">Home</NavLi>
-      <NavLi href="/about">About</NavLi>
-      <NavLi href="/docs/components/navbar">Navbar</NavLi>
-      <NavLi href="/pricing">Pricing</NavLi>
-      <NavLi href="/contact">Contact</NavLi>
-    </NavUl>
-  </Navbar>
+<Navbar let:hidden let:toggle {navClass}>
+  <NavHamburger on:click={toggle} />
+  <NavUl {hidden}>
+    <NavLi href="#" active={true} class="text-lg">Webix</NavLi>
+    <NavLi><DarkMode btnClass={darkmodebtn} /></NavLi>
+  </NavUl>
+</Navbar>

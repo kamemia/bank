@@ -23,6 +23,27 @@
 </script>
 
 <style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+  }
+
+  .search-bar {
+    position: sticky;
+    top: 0;
+    background-color: #fff; /* Set a background color if needed */
+    z-index: 1; /* Ensure the search bar is above other content */
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .cards-container {
+    flex-grow: 1;
+    overflow-y: scroll;
+    padding: 10px; /* Add padding to cards container if necessary */
+  }
+
   .card {
     display: flex;
     align-items: center;
@@ -57,20 +78,24 @@
   }
 </style>
 
-<div>
-  <input type="text" bind:value={filterText} placeholder="Search..." class="search-input" />
+<div class="container">
+  <div class="search-bar">
+    <input type="text" bind:value={filterText} placeholder="Search..." class="search-input" />
+  </div>
 
-  {#if filteredData.length > 0}
-    {#each filteredData as person (person.id)}
-      <div class="card" on:click={() => dispatch('cardClick', person)}>
-        <img src={`src/data/photos/${person.fname.toLowerCase()}_1.jpg`} alt="Avatar" class="avatar" />
-        <div class="info">
-          <div class="name">{person.fname} {person.lname}</div>
-          <div>${person.money}</div>
+  <div class="cards-container">
+    {#if filteredData.length > 0}
+      {#each filteredData as person (person.id)}
+        <div class="card" on:click={() => dispatch('cardClick', person)}>
+          <img src={`src/data/photos/${person.fname.toLowerCase()}_1.jpg`} alt="Avatar" class="avatar" />
+          <div class="info">
+            <div class="name">{person.fname} {person.lname}</div>
+            <div>${person.money}</div>
+          </div>
         </div>
-      </div>
-    {/each}
-  {:else}
-    <p>No matching results</p>
-  {/if}
+      {/each}
+    {:else}
+      <p>No matching results</p>
+    {/if}
+  </div>
 </div>

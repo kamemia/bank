@@ -3,17 +3,10 @@
     import { InlineCalendar } from 'svelte-calendar';
     import PersonsCard from "$lib/components/Cards/PersonsCard.svelte";
     import Menu from '$lib/components/Menu/Menu.svelte'
-    // import FullCalendar, { type CalendarOptions } from 'svelte-fullcalendar';
-    // import daygridPlugin from '@fullcalendar/daygrid';
-
-    // let options: CalendarOptions = {
-    //     initialView: 'dayGridMonth',
-    //     plugins: [daygridPlugin]
-    // };
 
     const theme = {
 		calendar: {
-			width: '300px',
+			width: '00px',
             maxWidth: '100vw',
             legend: {
                 height: '35px'

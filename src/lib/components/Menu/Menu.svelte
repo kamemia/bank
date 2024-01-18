@@ -1,6 +1,8 @@
 <script>
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
+  import { CalendarEditOutline, CloseOutline, HomeSolid } from 'flowbite-svelte-icons';
+	import { MegaMenu } from 'flowbite-svelte';
 
   let navActive = false;
 
@@ -124,9 +126,17 @@
   
   <main>
     <nav class="menu" class:active="{ navActive }" >
-      <button class="menu__Toggle" on:click="{ () => toggleNav() }">{ navActive ? 'X' : '>'}</button>
+      <button class="menu__Toggle" on:click={() => toggleNav()}>
+        {#if navActive}
+          <CloseOutline/>
+        {:else}
+          <!-- You can replace 'X' with another icon if you have a specific one for closing -->
+          <HomeSolid/>
+        {/if}
+      </button>
+      <!-- <button class="menu__Toggle" on:click="{ () => toggleNav() }">{ navActive ? 'X' : '>'}</button> -->
       <ul class="menu__List">
-        <li class="menu__Item"><a title="🐶" class="menu__Link active" href="/transactions">Transactions</a></li>
+        <li class="menu__Item"><a title="🐶"  class="menu__Link active" href="/transactions">Transactions</a></li>
         <li class="menu__Item"><a title="🐶" class="menu__Link" href="/customers">Customers</a></li>
         <li class="menu__Item"><a title="🙈" class="menu__Link" href="/payhistoryview">Payment History</a></li>
         <li class="menu__Item"><a title="🐻" class="menu__Link" href="/widgets">Widgets</a></li>

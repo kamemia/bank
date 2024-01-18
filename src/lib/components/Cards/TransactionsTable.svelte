@@ -6,10 +6,14 @@
   import beer from 'svelte-awesome/icons/beer';
   import Icon from 'svelte-awesome/components/Icon.svelte';
   import { ClockSolid } from 'flowbite-svelte-icons';
+  import { writable } from 'svelte/store';
+  
 
   let jsonData = [];
   let filteredData = [];
   let filterType = 'all';
+  const total = writable(0);
+  const activeButton = writable('all');
 
   onMount(async () => {
     const response = await fetch('/src/data/payments.json');
@@ -18,11 +22,27 @@
   });
 
   function filterData() {
-    if (filterType === 'all') {
-      filteredData = jsonData;
-    } else {
-      filteredData = jsonData.filter(item => item.type === filterType);
+    if (filterType === 'all' || filterType === 'payments' || filterType === 'incoming') {
+      filteredData = jsonData.filter(item => {
+        if (filterType === 'all') {
+          return true;
+        } else if (filterType === 'payments') {
+          return item.type === 0;
+        } else if (filterType === 'incoming') {
+          return item.type === 1;
+        }
+        return false;
+      });
+
+      // Update the active button
+      activeButton.set(filterType);
+
+      total.set(calculateTotal());
     }
+  }
+
+  function calculateTotal() {
+    return filteredData.reduce((total, item) => total + parseFloat(item.sum), 0).toFixed(2);
   }
 </script>
 
@@ -31,24 +51,85 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    overflow-y: scroll;
+    height: 800px;
+    display: block;
+  }
+
+  thead {
+    position: sticky;
+    top: 0;
   }
 
   th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    padding: 20px;
     text-align: left;
   }
 
   th {
     background-color: #f2f2f2;
   }
+
+  tbody {
+    max-height: 700px;
+    overflow-y: scroll;
+    scrollbar-width: thin; /* For Firefox */
+  }
+
+  tbody::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  tbody::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+  }
+
+  tfoot {
+    /* position: sticky; */
+    bottom: 0;
+    background-color: #f2f2f2;
+  }
+  .buttons {
+    text-align: right;
+}
+
+.buttons button {
+    /* Rectangle shape */
+    display: inline-block;
+    padding: 10px 20px; /* Adjust padding as needed for the desired size */
+    border: 1px solid #3498db; /* Border color */
+    border-radius: 5px; /* Rounded corners, adjust as needed */
+
+    /* Light shade of blue */
+    background-color: #3498db;
+    color: #fff; /* Text color */
+    cursor: pointer;
+
+    /* Add any additional styling for the buttons if needed */
+    margin-left: 5px; /* Add some spacing between the buttons if desired */
+}
+
+/* Hover effect */
+.buttons button:hover {
+    background-color: #2980b9; /* Darker shade of blue on hover, adjust as needed */
+}
+
+.buttons button.active {
+    background-color: #2980b9;
+  }
+
+  .buttons button.active:hover {
+    background-color: #1f6694;
+  }
+
 </style>
 
 <div class="container">
   <div class="buttons">
-    <button on:click={() => { filterType = 'all'; filterData(); }}>All</button>
-    <button on:click={() => { filterType = 'payments'; filterData(); }}>Payments</button>
-    <button on:click={() => { filterType = 'incoming'; filterData(); }}>Incoming</button>
+    <button class:active={$activeButton === 'all'} on:click={() => { filterType = 'all'; filterData(); }}>All</button>
+    <button class:active={$activeButton === 'payments'} on:click={() => { filterType = 'payments'; filterData(); }}>Payments</button>
+    <button class:active={$activeButton === 'incoming'} on:click={() => { filterType = 'incoming'; filterData(); }}>Incoming</button>
   </div>
 
   <table>
@@ -95,6 +176,10 @@
             <td>{item.sum}</td>
           </tr>
         {/each}
+        <tfoot>
+          <td colspan="7">Totals</td>
+          <td>{calculateTotal()}</td>
+        </tfoot>
       {:else}
         <tr>
           <td colspan="8">Loading...</td>

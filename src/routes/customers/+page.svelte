@@ -26,9 +26,10 @@
     ];
 </script>
 
-<Menu/>
 
+<Menu/>
 <div class="grid grid-cols-5 grid-rows-5 gap-4">
+   
     <div class="col-span-4 row-span-5">
         <Tabs {items}/>
     </div>

@@ -4,7 +4,7 @@
   let jsonData = [];
 
   onMount(async () => {
-    const response = await fetch('/src/data/individualpayments.json'); // Adjust the path based on your actual file location
+    const response = await fetch('/src/data/individualpayments.json'); 
     jsonData = await response.json();
   });
 </script>
