@@ -1,7 +1,7 @@
 <script>
     import Menu from '$lib/components/Menu/Menu.svelte'
     import Table from '$lib/components/Table/PaymentHistoryTable.svelte'
-    import PersonsCard from '$lib/components/Cards/decrypted-use-PersonsCard.svelte';
+    import PersonsCard from '$lib/components/Cards/PersonsCard.svelte';
 </script>
 
 <Menu/>

@@ -1,7 +1,9 @@
 <script>
     import { onMount } from 'svelte';
     import { createEventDispatcher } from 'svelte';
+    import { Tooltip } from 'flowbite-svelte';
   
+    let placement = 'left';
     let jsonData = [];
     let filteredData = [];
     let filterText = '';
@@ -47,7 +49,7 @@
 
 <div class="w-full max-w-xs p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700">
     <div class="flex items-center justify-between mb-4">
-        <!-- <h2 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Persons</h2> -->
+        <h2 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Persons</h2>
         <input
             type="text"
             id="search"
@@ -58,7 +60,7 @@
             placeholder="Enter name to search"
         />
     </div>
-    <div class="flow-root max-h-96 overflow-y-auto overflow-hidden">
+    <div class="flow-root max-h-96 overflow-y-auto overflow-hidden" >
         <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
             {#if filteredData.length > 0}
                 {#each filteredData as person (person.id)}
